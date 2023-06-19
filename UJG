@@ -1,0 +1,90 @@
+-- Instances: 8 | Scripts: 2 | Modules: 0
+local G2L = {};
+
+-- Workspace.ScreenGui
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+-- Workspace.ScreenGui.OpenManager
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Size"] = UDim2.new(0, 381, 0, 171);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Position"] = UDim2.new(0.335751473903656, 0, 0.3532608449459076, 0);
+G2L["2"]["Name"] = [[OpenManager]];
+
+-- Workspace.ScreenGui.OpenManager.TextBox
+G2L["3"] = Instance.new("TextBox", G2L["2"]);
+G2L["3"]["CursorPosition"] = -1;
+G2L["3"]["TextSize"] = 14;
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(59, 59, 59);
+G2L["3"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3"]["Size"] = UDim2.new(0, 382, 0, 34);
+G2L["3"]["Text"] = [[]];
+G2L["3"]["Position"] = UDim2.new(0, 0, 0.20467835664749146, 0);
+
+-- Workspace.ScreenGui.OpenManager.TextButton
+G2L["4"] = Instance.new("TextButton", G2L["2"]);
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(142, 142, 142);
+G2L["4"]["TextSize"] = 14;
+G2L["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["Size"] = UDim2.new(0, 381, 0, 29);
+G2L["4"]["Text"] = [[Check code]];
+G2L["4"]["Position"] = UDim2.new(0, 0, 0.8304093480110168, 0);
+
+-- Workspace.ScreenGui.OpenManager.TextButton.LocalScript
+G2L["5"] = Instance.new("LocalScript", G2L["4"]);
+
+
+-- Workspace.ScreenGui.OpenManager.TextLabel
+G2L["6"] = Instance.new("TextLabel", G2L["2"]);
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6"]["TextSize"] = 14;
+G2L["6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["Size"] = UDim2.new(0, 380, 0, 33);
+G2L["6"]["Text"] = [[Please paste your code in the textbox]];
+
+-- Workspace.ScreenGui.OpenManager.TextButton
+G2L["7"] = Instance.new("TextButton", G2L["2"]);
+G2L["7"]["BackgroundColor3"] = Color3.fromRGB(107, 107, 107);
+G2L["7"]["TextSize"] = 14;
+G2L["7"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7"]["Size"] = UDim2.new(0, 46, 0, 30);
+G2L["7"]["Text"] = [[X]];
+G2L["7"]["Position"] = UDim2.new(0.8818897604942322, 0, 0, 0);
+
+-- Workspace.ScreenGui.OpenManager.TextButton.LocalScript
+G2L["8"] = Instance.new("LocalScript", G2L["7"]);
+
+
+-- Workspace.ScreenGui.OpenManager.TextButton.LocalScript
+local function C_5()
+local script = G2L["5"];
+	script.Parent.MouseButton1Click:Connect(function()
+		if script.Parent.Parent.TextBox.Text == "b5ty9m0w21q8nj732vn" then
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/hecmax/mata/main/ui"))()
+		else
+			game.StarterGui:SetCore("SendNotification",{
+				Title = "The code is wrong";
+				Text = "Please try again"
+			})
+		end
+	end)
+	
+end;
+task.spawn(C_5);
+-- Workspace.ScreenGui.OpenManager.TextButton.LocalScript
+local function C_8()
+local script = G2L["8"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+	
+end;
+task.spawn(C_8);
+
+return G2L["1"], require;
